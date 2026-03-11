@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <style name="TextAppearance.AndroidApp4.SectionTitle" parent="TextAppearance.Material3.TitleLarge">
+    <item name="android:textStyle">bold</item>
+  </style>
+
+  <style name="TextAppearance.AndroidApp4.SectionBody" parent="TextAppearance.Material3.BodyMedium">
+    <item name="android:alpha">0.78</item>
+  </style>
+
+  <style name="Widget.AndroidApp4.Card" parent="Widget.Material3.CardView.Elevated">
+    
+    <item name="elevation">10dp</item>
+    <item name="cardUseCompatPadding">true</item>
+    <item name="cardCornerRadius">28dp</item>
+  </style>
+</resources>
