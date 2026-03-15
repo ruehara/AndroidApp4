@@ -7,17 +7,17 @@
     android:background="?attr/colorSurface">
 
     <com.google.android.material.appbar.AppBarLayout
+        style="@style/Widget.AndroidApp4.AppBarLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="?attr/colorSurface"
-        android:fitsSystemWindows="true">
+        android:fitsSystemWindows="true"
+        app:liftOnScroll="false">
 
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/top_app_bar"
+            style="@style/Widget.AndroidApp4.MaterialToolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingStart="8dp"
-            android:paddingEnd="8dp"
             app:navigationIcon="@drawable/ic_palette"
             app:subtitle="@string/showcase_subtitle"
             app:title="@string/showcase_title"
@@ -194,6 +194,7 @@
                         android:text="@string/section_inputs_body" />
 
                     <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/input_name_layout"
                         style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -209,7 +210,12 @@
                             android:inputType="textPersonName"
                             tools:text="Rodrigo" />
                     </com.google.android.material.textfield.TextInputLayout>
-
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/button_confirmation"
+                        style="@style/Widget.Material3.Button.TextButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/button_confirmation" />
                     <com.google.android.material.materialswitch.MaterialSwitch
                         android:id="@+id/switch_dynamic"
                         android:layout_width="match_parent"
@@ -454,15 +460,7 @@
         </androidx.core.widget.NestedScrollView>
     </LinearLayout>
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab_preview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:contentDescription="@string/fab_description"
-        android:src="@drawable/ic_magic"
-        app:layout_anchor="@id/bottom_navigation"
-        app:layout_anchorGravity="top|end" />
+    
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"

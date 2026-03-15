@@ -30,10 +30,16 @@
     <item name="colorPrimaryInverse">@color/md_theme_dark_inversePrimary</item>
     <item name="colorSurfaceContainer">@color/md_theme_dark_surfaceContainer</item>
     <item name="colorSurfaceContainerHigh">@color/md_theme_dark_surfaceContainerHigh</item>
-    <item name="android:statusBarColor">@android:color/transparent</item>
-    <item name="android:windowLightStatusBar">false</item>
+    <item name="android:statusBarColor">@color/md_theme_dark_primary</item>
+    <item name="android:windowLightStatusBar">true</item>
     <item name="materialAlertDialogTheme">@style/ThemeOverlay.AndroidApp4.MaterialAlertDialog</item>
     <item name="chipGroupStyle">@style/Widget.AndroidApp4.ChipGroup</item>
     <item name="bottomNavigationStyle">@style/Widget.AndroidApp4.BottomNavigation</item>
   </style>
+
+  <style name="ThemeOverlay.AndroidApp4.MaterialAlertDialog" parent="ThemeOverlay.Material3.MaterialAlertDialog.Centered" />
+
+  <style name="Widget.AndroidApp4.ChipGroup" parent="Widget.Material3.ChipGroup" />
+
+  <style name="Widget.AndroidApp4.BottomNavigation" parent="Widget.Material3.BottomNavigationView" />
 </resources>

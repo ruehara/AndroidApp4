@@ -31,7 +31,9 @@ public class MainActivity : AppCompatActivity
         var dialogButton = FindViewById<MaterialButton>(Resource.Id.button_show_dialog);
         var outlinedButton = FindViewById<MaterialButton>(Resource.Id.button_outlined);
         var actionButton = FindViewById<MaterialButton>(Resource.Id.button_primary);
+        var confirmationButton = FindViewById<MaterialButton>(Resource.Id.button_confirmation);
         var nameInput = FindViewById<TextInputEditText>(Resource.Id.input_name);
+        var nameInputLayout = FindViewById<TextInputLayout>(Resource.Id.input_name_layout);
         var helperLabel = FindViewById<TextView>(Resource.Id.text_state_summary);
         var materialSwitch = FindViewById<MaterialSwitch>(Resource.Id.switch_dynamic);
         var chipGroup = FindViewById<ChipGroup>(Resource.Id.chip_group);
@@ -144,6 +146,24 @@ public class MainActivity : AppCompatActivity
                 {
                     helperLabel.Text = GetString(Resource.String.state_summary_format, nameInput?.Text ?? string.Empty, (int)(slider?.Value ?? 0));
                 }
+            };
+        }
+
+        if (confirmationButton is not null && nameInput is not null && nameInputLayout is not null)
+        {
+            confirmationButton.Click += (_, _) =>
+            {
+                var inputName = nameInput.Text?.Trim();
+
+                if (string.IsNullOrWhiteSpace(inputName))
+                {
+                    nameInputLayout.Error = GetString(Resource.String.input_name_error_required);
+                    nameInput.RequestFocus();
+                    return;
+                }
+
+                nameInputLayout.Error = null;
+                nameInputLayout.ErrorEnabled = false;
             };
         }
 
